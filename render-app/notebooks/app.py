@@ -4,7 +4,8 @@ import streamlit as st
 st.header('Meu app web')
 car_data = pd.read_csv('render-app/notebooks/vehicles.csv') # lendo os dados
 hist_button = st.button('Criar histograma') # criar um botão
-
+fig = px.scatter(car_data, x="odometer", y="price") # criar um gráfico de dispersão
+fig.show()
 if hist_button: # se o botão for clicado
 # escrever uma mensagem
     st.write('Criando um histograma para o conjunto de dados de anúncios de vendas de carros')
